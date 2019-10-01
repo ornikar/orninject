@@ -13,6 +13,12 @@ The project is based on three philosophies *KISS*, *DRY* and *YAGNI*.
 
 ---
 
+## Demo
+
+[![asciicast](https://asciinema.org/a/271844.svg)](https://asciinema.org/a/271844)
+
+---
+
 ## Installation
 
 Orninject is available on Linux, OSX and Windows platforms.
