@@ -17,10 +17,10 @@ Pipe write:
 ```bash
 export TITLE=Hello world
 cat index.html
-$ <h1>{{ upper .TITLE }}</h2>
+$ <h1>{{ upper .TITLE }}</h1>
 cat index.html | orninject > index.html
 cat index.html
-$ <h1>HELLO WORLD</h2>
+$ <h1>HELLO WORLD</h1>
 ```
 
 ### Simple replacement way 2
@@ -28,7 +28,7 @@ $ <h1>HELLO WORLD</h2>
 File `index.html`:
 
 ```html
-<h1>{{ upper .TITLE }}</h2>
+<h1>{{ upper .TITLE }}</h1>
 ```
 
 Command:
@@ -41,7 +41,7 @@ orninject replace index.html
 New `index.html` content:
 
 ```html
-<h1>HELLO WORLD</h2>
+<h1>HELLO WORLD</h1>
 ```
 
 ### Advanced replacement
