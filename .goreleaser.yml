@@ -1,0 +1,61 @@
+project_name: orninject
+before:
+  hooks:
+    - go mod download
+    - go generate ./...
+release:
+  prerelease: true
+builds:
+  - env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - darwin
+      - windows
+    goarch:
+      - 386
+      - amd64
+      - arm
+      - arm64
+    goarm:
+      - 6
+      - 7
+    ldflags:
+      - -s -w -X github.com/ornikar/orninject/cmd.version={{.Version}} -X github.com/ornikar/orninject/cmd.commit={{.Commit}} -X github.com/ornikar/orninject/cmd.date={{.Date}}
+archives:
+  - id: orninject
+    replacements:
+      darwin: Darwin
+      linux: Linux
+      windows: Windows
+      bit: Arm
+      bitv6: Arm6
+      bitv7: Arm7
+      386: i386
+      amd64: x86_64
+checksum:
+  name_template: "checksums.txt"
+snapshot:
+  name_template: "{{ .Tag }}-next"
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
+
+# Homebrew
+brews:
+  -
+    name: orninject
+    github:
+      owner: ornikar
+      name: homebrew-orninject
+    commit_author:
+      name: Julien Breux
+      email: julien.breux@ornikar.com
+    folder: Formula
+    homepage: https://ornikar.github.io/orninject/
+    description: orninject is a template engine used to manage Docker images templates repositories.
+    test: |
+      system "orninject version"
