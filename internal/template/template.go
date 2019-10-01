@@ -12,7 +12,7 @@ import (
 
 const perm = 0644
 
-// Replace replaces the
+// Replace replaces the env vars in file
 func Replace(f string) error {
 	// Read file
 	c, err := read(f)
@@ -42,6 +42,31 @@ func Replace(f string) error {
 
 	// Write file
 	return write(f, buf.Bytes())
+}
+
+// DryReplace replaces the env vars for output
+func DryReplace(c []byte) ([]byte, error) {
+	// Get env vars
+	envMap, err := envToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+
+	// Execute template
+	t, err := template.
+		New("output").
+		Funcs(sprig.GenericFuncMap()).
+		Parse(string(c))
+	if err != nil {
+		return []byte{}, err
+	}
+
+	var buf bytes.Buffer
+	if err := t.Execute(&buf, envMap); err != nil {
+		return []byte{}, err
+	}
+
+	return buf.Bytes(), err
 }
 
 // read reads the file content

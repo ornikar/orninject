@@ -2,7 +2,28 @@
 
 ## Getting started
 
-### Simple replacement
+### Simple replacement way 1
+
+Pipe:
+
+```bash
+export TITLE=world
+echo "Hello {{ title .TITLE }}" | orninject
+$ Hello World
+```
+
+Pipe write:
+
+```bash
+export TITLE=Hello world
+cat index.html
+$ <h1>{{ upper .TITLE }}</h2>
+cat index.html | orninject > index.html
+cat index.html
+$ <h1>HELLO WORLD</h2>
+```
+
+### Simple replacement way 2
 
 File `index.html`:
 
@@ -14,7 +35,7 @@ Command:
 
 ```bash
 export TITLE=Hello world
-./orninject replace index.html
+orninject replace index.html
 ```
 
 New `index.html` content:
@@ -36,7 +57,7 @@ Command:
 
 ```bash
 export TITLE=Hello world
-./orninject replace index.html
+orninject replace index.html
 ```
 
 New `index.html` content:
