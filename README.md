@@ -2,7 +2,8 @@
 
 [![CircleCI](https://badgen.net/circleci/github/ornikar/orninject/master)](https://circleci.com/gh/ornikar/orninject)
 [![Go Report Card](https://goreportcard.com/badge/github.com/ornikar/orninject)](https://goreportcard.com/report/github.com/ornikar/orninject)
-[![Codebeat badge](https://codebeat.co/badges/xxx)](https://codebeat.co/projects/github-com-ornikar-orninject-master)
+[![Codebeat badge](https://codebeat.co/badges/844e69d7-7534-445d-9b42-564fc49cd99e
+)](https://codebeat.co/projects/github-com-ornikar-orninject-master)
 [![GoDoc](https://godoc.org/github.com/ornikar/orninject?status.svg)](http://godoc.org/github.com/ornikar/orninject)
 [![GitHub tag](https://img.shields.io/github/tag/ornikar/orninject.svg)](Tag)
 [![Go version](https://img.shields.io/badge/go-v1.13-blue)](https://golang.org/dl/#stable)
