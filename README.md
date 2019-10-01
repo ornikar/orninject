@@ -27,7 +27,7 @@ Orninject is available on Linux, OSX and Windows platforms.
    ```
 
 * Building from source
-   orninject was built using go 1.12 or above. In order to build orninject from source you must:
+   orninject was built using go 1.13 or above. In order to build orninject from source you must:
    1. Clone this repository
    2. Add the following command in your go.mod file
 
